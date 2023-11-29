@@ -1,4 +1,4 @@
-# kedro-geospatial
+# Kedro Background Information
 
 ## Project Documentation
 
