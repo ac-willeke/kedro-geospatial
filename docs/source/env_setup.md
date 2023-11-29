@@ -165,7 +165,9 @@ Setup Kedro Project using venv. Follow the instructions from [Kedro's official d
     - add `docs/build/html` to `.gitignore`
     - add `docs/build/html` to `gh-pages` branch
     - commit and push changes to `gh-pages` branch
-    - go to GitHub and select `gh-pages` branch as source for GitHub Pages
+    - go to GitHub > settings > Pages
+        - select `gh-pages` branch as source for GitHub Pages
+        - select `docs/build/html` as folder
     - open `https://<username>.github.io/<project_name>/` in browser
 
 **Your Environment is now set up and ready to go! Next set up your [project](./project_setup.md).**
