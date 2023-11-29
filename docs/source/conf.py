@@ -18,11 +18,11 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 # add project root to python path
-import os
+import os  # noqa: E402
 
 # import modules
-import re
-import sys
+import re  # noqa: E402
+import sys  # noqa: E402
 
 # add project_root to python path
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -30,8 +30,9 @@ project_root = os.path.dirname(os.path.dirname(current_dir))
 print(project_root)
 sys.path.append(project_root)
 
-from kedro.framework.cli.utils import find_stylesheets
-from src.kedro_geospatial import __version__ as release
+from kedro.framework.cli.utils import find_stylesheets  # noqa: E402
+
+from src.kedro_geospatial import __version__ as release  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
