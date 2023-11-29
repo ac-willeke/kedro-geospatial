@@ -11,8 +11,9 @@ This template is a starting point for creating a
 **Geospatial Data Sciences**. It is based on the standard Kedro template which
 can be created using the command ``kedro new``.
 
-The template is extended with the following features:
+The template contains the following features:
 
+- **Kedro** project configuration.
 - **Dockerfile** to run your project in a container.
     - Base image is set to `osgeo/gdal:ubuntu-small-latest <https://github.com/OSGeo/gdal/pkgs/container/gdal>`_.
     - Dependencies defined in `requirements.txt </src/requirements.txt>`_ and `pyproject.toml <src/pyproject.toml>`_ installed in the container using pip.
@@ -29,6 +30,7 @@ Table of Contents
 
    env_setup
    project_setup
+   kedro_readme
    modules
 
 

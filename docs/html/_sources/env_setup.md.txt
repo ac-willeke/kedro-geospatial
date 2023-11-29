@@ -154,9 +154,11 @@ Setup Kedro Project using venv. Follow the instructions from [Kedro's official d
     sphinx-apidoc --module-first -o source ../src/<package_name>
     ```
     - from docs folder run `pip install -e ../src`
+
 14. Make sphinx compatible with GitHub Pages
     - [medium blog](https://python.plainenglish.io/how-to-host-your-sphinx-documentation-on-github-550254f325ae)
     - update BUILDDIR to ../docs in make.bat and Makefile
+    - add `.nojekyll` file to docs folder
     - build html: `make html`
     ```bash
     --docs
@@ -171,21 +173,21 @@ Setup Kedro Project using venv. Follow the instructions from [Kedro's official d
         |--make.bat
         |--Makefile
     ```
-
-
-    - open `docs/build/html/index.html` in browser
+    - open `docs/index.html` in browser
         - right click on index.html and select "Open with Live Server"
+
 
 14. Init Git Repository and Publish to Github
 
 15. Publish Sphinx Documentation to GitHub Pages
+    **optional, you can also publish from main**
     - create a new branch `gh-pages`
     - add `docs/build/html` to `.gitignore`
     - add `docs/build/html` to `gh-pages` branch
     - commit and push changes to `gh-pages` branch
     - go to GitHub > settings > Pages
         - select `gh-pages` branch as source for GitHub Pages
-        - select `docs/build/html` as folder
+        - select `docs/` as folder
     - open `https://<username>.github.io/<project_name>/` in browser
 
 **Your Environment is now set up and ready to go! Next set up your [project](./project_setup.md).**

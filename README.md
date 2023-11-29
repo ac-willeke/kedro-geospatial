@@ -1,126 +1,25 @@
-# kedro-geospatial
+Kedro Geospatial Template
+--------------------------
 
-## Project Documentation
-To open sphinx documentaion open the [index.html](docs/_build/html/index.html)
-in your webbrowser (doucle-click or drag-drop)
+This template is a starting point for creating a
+[Kedro](https://docs.kedro.org/en/stable/index.html) project for
+**Geospatial Data Sciences**. It is based on the standard Kedro template which
+can be created using the command ``kedro new``.
 
-## Overview
 
-This is your new Kedro project, which was generated using `kedro 0.18.14`.
+The template contains the following features:
 
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
+- **Kedro** project configuration.
+- **Dockerfile** to run your project in a container.
+    - Base image is set to [osgeo/gdal:ubuntu-small-latest](https://github.com/OSGeo/gdal/pkgs/container/gdal).
+    - Dependencies defined in [requirements.txt](/src/requirements.txt) and [pyproject.toml](src/pyproject.toml)installed in the container using pip.
+    - [template_devcontainer.json](/.devcontainer/template_devcontainer.json) to set up the configuration of the development container in VS Code, including volume mounting and vscode extensions.
+- **Geospatial Dependencies** such as gdal, geopandas, eartengine-api, geemap, leafmap and duckdb are included in the [requirements.txt](/src/requirements.txt>).
+- **Sphinx documentation** template to document your project.
+- **Pre-commit configuration** to run pre-commit hooks for black, isort, and ruff defined in [pre-commit-config.yaml](pre-commit-config.yaml) and [pyproject.toml](/pyproject.toml).
+- **Make file** to run linting and cleaning commands
 
-## Rules and guidelines
 
-In order to get the best out of the template:
-
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a data engineering convention
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
-
-## How to install dependencies
-
-Declare any dependencies in `src/requirements.txt` for `pip` installation and `src/environment.yml` for `conda` installation.
-
-To install them, run:
-
-```
-pip install -r src/requirements.txt
-```
-
-## How to run your Kedro pipeline
-
-You can run your Kedro project with:
-
-```
-kedro run
-```
-
-## How to test your Kedro project
-
-Have a look at the file `src/tests/test_run.py` for instructions on how to write your tests. You can run your tests as follows:
-
-```
-kedro test
-```
-
-To configure the coverage threshold, go to the `.coveragerc` file.
-
-## Project dependencies
-
-To generate or update the dependency requirements for your project:
-
-```
-kedro build-reqs
-```
-
-This will `pip-compile` the contents of `src/requirements.txt` into a new file `src/requirements.lock`. You can see the output of the resolution by opening `src/requirements.lock`.
-
-After this, if you'd like to update your project requirements, please update `src/requirements.txt` and re-run `kedro build-reqs`.
-
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
-
-## How to work with Kedro and notebooks
-
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `context`, `catalog`, and `startup_error`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r src/requirements.txt` you will not need to take any extra steps before you use them.
-
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
-```
-
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-### How to convert notebook cells to nodes in a Kedro project
-You can move notebook code over into a Kedro project structure using a mixture of [cell tagging](https://jupyter-notebook.readthedocs.io/en/stable/changelog.html#release-5-0-0) and Kedro CLI commands.
-
-By adding the `node` tag to a cell and running the command below, the cell's source code will be copied over to a Python file within `src/<package_name>/nodes/`:
-
-```
-kedro jupyter convert <filepath_to_my_notebook>
-```
-> *Note:* The name of the Python file matches the name of the original notebook.
-
-Alternatively, you may want to transform all your notebooks in one go. Run the following command to convert all notebook files found in the project root directory and under any of its sub-folders:
-
-```
-kedro jupyter convert --all
-```
-
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can run `kedro activate-nbstripout`. This will add a hook in `.git/config` which will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be retained locally.
-
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/tutorial/package_a_project.html)
+GitHub Pages
+------------
+Documentation is hosted on GitHub Pages: [Documentation | Kedro Geospatial Template](https://ac-willeke.github.io/kedro-geospatial/html/index.html)
